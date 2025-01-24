@@ -1,0 +1,129 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Nunito Sans", arial, sans-serif;
+  font-size: 14px;
+  line-height: 1;
+}
+
+section {
+  display: -webkit-flex;
+  display: flex;
+  border: 1px solid #ccc;
+}
+
+article {
+  padding: 10px;
+  flex: 1 1 auto;
+  max-width: 600px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fdf2e9;
+  height: 9.6rem;
+  padding: 0 4.8rem;
+  border-bottom: 10px solid #4e4c4c33;
+}
+
+.logo {
+  height: 2.2rem;
+}
+
+.search-query {
+  height: 44px;
+  line-height: 44px;
+  padding: 0 0.75rem;
+}
+
+ul {
+  padding: 20px 0;
+  margin: 0;
+  font-size: 1.8rem;
+  min-width: 180px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  list-style: none;
+}
+
+ul li a {
+  padding: 10px 20px;
+  display: block;
+  color: #333;
+  text-decoration: none;
+}
+
+ul li a:hover,
+ul li a:active {
+  color: #df5a13;
+}
+
+.drivers-list {
+  display: flex;
+  font-family: Arial, sans-serif;
+}
+
+.row {
+  flex: 1;
+  padding: 10px;
+  display: flex;
+  gap: 20px;
+}
+
+.row1 {
+  max-width: 40px;
+  gap: 2px;
+  margin: 3px;
+  background-color: white;
+}
+
+.date {
+  background-color: rgb(36, 68, 4);
+  max-width: 40px;
+}
+
+.drivers-header {
+  display: flex;
+}
+
+.border {
+  border: 1px solid #ddd;
+}
+.driver-header__day {
+  font-size: 10px;
+  font-weight: bold;
+  text-transform: uppercase;
+  max-width: 40px;
+  margin-left: 3px;
+  margin-right: 3px;
+  gap: 20px;
+}
+
+.error-message {
+  color: red;
+  font-weight: bold;
+  text-align: center;
+  margin: 20px 0;
+}
+
+@media (max-width: 600px) {
+  section {
+    -webkit-flex-direction: column;
+    flex-direction: column;
+  }
+
+  ul {
+    flex-direction: row;
+  }
+}

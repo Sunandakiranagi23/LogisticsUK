@@ -1,0 +1,15 @@
+<ul class="navigation-menu">
+  <li *ngFor="let menu of navigationMenu">
+    <a
+      [routerLink]="menu.url"
+      routerLinkActive="active-link"
+      [routerLinkActiveOptions]="{ exact: true }"
+    >
+      {{ menu.title }}
+    </a>
+  </li>
+</ul>
+
+<div *ngIf="errorMessage" class="error-message">
+  {{ errorMessage }}
+</div>

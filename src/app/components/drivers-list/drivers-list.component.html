@@ -1,0 +1,38 @@
+<div class="driver-container" *ngIf="driversList.length > 0 && !errorMessage">
+  <input
+    class="search-query"
+    type="text"
+    [(ngModel)]="searchQuery"
+    (input)="filterDrivers()"
+    placeholder="Search for Drivers"
+  />
+  <div class="drivers-header" *ngIf="filteredDriversList.length > 0">
+    <div class="driver-name row"></div>
+    <div class="driver-vehicleRegistration row"></div>
+    <div class="driver-activity-duration row"></div>
+    <div class="driver-header__day row" *ngFor="let day of daysOfWeek">
+      {{ day | date : "EEE" }}
+    </div>
+  </div>
+  <div class="drivers-list" *ngFor="let driver of filteredDriversList">
+    <div class="driver-list__name row">{{ driver.forename }}</div>
+    <div class="driver-list__vehicle-registration row">
+      {{ driver.vehicleRegistration }}
+    </div>
+    <div class="driver-list__activity-duration row">
+      {{ calculateTotalDuration(driver.traces) }}
+    </div>
+    <div
+      class="driver-list__day row row1 border"
+      *ngFor="let day of daysOfWeek"
+      [ngClass]="{ date: hasDayActivities(day, driver.traces) }"
+    ></div>
+  </div>
+</div>
+<div *ngIf="errorMessage" class="error-message">
+  <p>{{ errorMessage }}</p>
+</div>
+
+<div *ngIf="driversList.length === 0 && !errorMessage">
+  <p>Loading drivers data...</p>
+</div>
